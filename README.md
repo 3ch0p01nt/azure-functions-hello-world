@@ -532,6 +532,10 @@ $FUNCTION_APP = "func-helloworld-abc123"  # Letters, numbers, and hyphens, must 
 
 > **Note:** These variables only exist in your current PowerShell session. If you close PowerShell, you'll need to set them again.
 
+> **Azure Government Users:** If you're using Azure Government (.us), change the location to a government region:
+> - `$LOCATION = "usgovvirginia"` or `"usgovarizona"`
+> - Your function URL will be `*.azurewebsites.us` instead of `*.azurewebsites.net`
+
 ### 4.2 Create a Resource Group
 
 A resource group is a container that holds related Azure resources. When you delete the resource group, everything inside gets deleted too.
