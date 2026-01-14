@@ -54,14 +54,14 @@ Then open http://localhost:7071/api/HelloWorld in your browser.
 
 Before starting, you need to install several tools. Follow each section in order.
 
-### 1.1 Python 3.11
+### 1.1 Python 3.12
 
-Azure Functions supports Python 3.9-3.11. We'll use 3.11.
+Azure Functions supports Python 3.10, 3.11, 3.12, and 3.13. We'll use **3.12** (recommended - supported until October 2028).
 
 **Installation:**
 
 1. Go to [python.org/downloads](https://www.python.org/downloads/)
-2. Download **Python 3.11.x** (click "Download Python 3.11.x" or find it under "Looking for a specific release?")
+2. Download **Python 3.12.x** (should be the featured download, or find it under "Looking for a specific release?")
 3. Run the installer
 4. **CRITICAL: Check the box "Add Python to PATH"** at the bottom of the first screen before clicking Install
 5. Click "Install Now"
@@ -73,14 +73,14 @@ Open a NEW PowerShell window (important - old windows won't have the PATH update
 ```powershell
 python --version
 ```
-Expected output: `Python 3.11.x`
+Expected output: `Python 3.12.x`
 
 **Troubleshooting:**
 
 | Problem | Solution |
 |---------|----------|
 | "python is not recognized" | Python wasn't added to PATH. Uninstall, reinstall, and CHECK the PATH box |
-| Wrong Python version shown | Use `py -3.11 --version` to target specific version |
+| Wrong Python version shown | Use `py -3.12 --version` to target specific version |
 | Windows opens Microsoft Store | Settings > Apps > App execution aliases > turn OFF "python.exe" and "python3.exe" |
 
 ---
@@ -101,7 +101,7 @@ Required for installing Azure Functions Core Tools.
 node --version
 npm --version
 ```
-Expected output: `v20.x.x` (or higher LTS) and `10.x.x`
+Expected output: `v22.x.x` (or higher LTS) and `10.x.x`
 
 **Troubleshooting:**
 
@@ -567,7 +567,7 @@ az functionapp create `
     --storage-account $STORAGE_ACCOUNT `
     --consumption-plan-location $LOCATION `
     --runtime python `
-    --runtime-version 3.11 `
+    --runtime-version 3.12 `
     --functions-version 4 `
     --os-type Linux
 ```
@@ -726,7 +726,7 @@ on:
 
 env:
   AZURE_FUNCTIONAPP_NAME: 'func-helloworld-abc123'  # <-- CHANGE THIS to your function app name
-  PYTHON_VERSION: '3.11'
+  PYTHON_VERSION: '3.12'
 
 jobs:
   build-and-deploy:
