@@ -1,0 +1,11 @@
+# Ignore these files when deploying to Azure
+.git*
+.vscode/
+__pycache__/
+.python_packages/
+local.settings.json
+tests/
+.env
+.venv/
+*.md
+.funcignore
